@@ -35,7 +35,7 @@ function deleteNoteList() {
 function updateNoteList() {
     let notenListe = JSON.parse(localStorage.getItem("notenListe"));
     let noteListContainer = document.getElementById("note-list-container");
-    noteListContainer.innerHTML = "";
+    noteListContainer.setHTML = "";
 
     if (notenListe) {
         let noteCount = {};
