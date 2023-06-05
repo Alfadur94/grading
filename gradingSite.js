@@ -71,10 +71,12 @@ function showRandomNote() {
 function createButtonsAndNoteList() {
     let buttonContainer = document.getElementById("button-container");
 
+    let buttonRow = document.getElementById("button-row");
+
     let noteListContainer = document.getElementById("note-list-container");
 
     for (let i = 1; i <= 5; i++) {
-        let button = document.createElement("button" +i);
+        let button = document.createElement("button");
         button.textContent = "Note " + i;
         button.addEventListener("click", function() {
             addNoteToList(i);
@@ -82,20 +84,20 @@ function createButtonsAndNoteList() {
         buttonContainer.appendChild(button);
     }
 
-    let randomButton = document.createElement("randomButton");
+    let randomButton = document.createElement("button");
     randomButton.textContent = "Zufällige Note anzeigen";
     randomButton.addEventListener("click", showRandomNote);
-    buttonContainer.appendChild(randomButton);
+    buttonRow.appendChild(randomButton);
 
-    let resetLastClickButton = document.createElement("resetLastClickButton");
+    let resetLastClickButton = document.createElement("button");
     resetLastClickButton.textContent = "Letzten Klick zurücksetzen";
     resetLastClickButton.addEventListener("click", resetLastClick);
-    buttonContainer.appendChild(resetLastClickButton);
+    buttonRow.appendChild(resetLastClickButton);
 
-    let deleteButton = document.createElement("deleteButton");
+    let deleteButton = document.createElement("button");
     deleteButton.textContent = "Notenliste löschen";
     deleteButton.addEventListener("click", deleteNoteList);
-    buttonContainer.appendChild(deleteButton);
+    buttonRow.appendChild(deleteButton);
 
     updateNoteList();
 }
