@@ -73,9 +73,8 @@ function createButtonsAndNoteList() {
 
     let noteListContainer = document.getElementById("note-list-container");
 
-    // Erstellen der Buttons
     for (let i = 1; i <= 5; i++) {
-        let button = document.createElement("button");
+        let button = document.createElement("button" +i);
         button.textContent = "Note " + i;
         button.addEventListener("click", function() {
             addNoteToList(i);
@@ -83,17 +82,17 @@ function createButtonsAndNoteList() {
         buttonContainer.appendChild(button);
     }
 
-    let randomButton = document.createElement("button");
+    let randomButton = document.createElement("randomButton");
     randomButton.textContent = "Zufällige Note anzeigen";
     randomButton.addEventListener("click", showRandomNote);
     buttonContainer.appendChild(randomButton);
 
-    let resetLastClickButton = document.createElement("button");
+    let resetLastClickButton = document.createElement("resetLastClickButton");
     resetLastClickButton.textContent = "Letzten Klick zurücksetzen";
     resetLastClickButton.addEventListener("click", resetLastClick);
     buttonContainer.appendChild(resetLastClickButton);
 
-    let deleteButton = document.createElement("button");
+    let deleteButton = document.createElement("deleteButton");
     deleteButton.textContent = "Notenliste löschen";
     deleteButton.addEventListener("click", deleteNoteList);
     buttonContainer.appendChild(deleteButton);

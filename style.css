@@ -5,7 +5,7 @@ body {
     background-color: #f0f0f0;
 }
 
-.container {
+#container {
     max-width: 600px;
     margin: 0 auto;
     background-color: #fff;
@@ -18,13 +18,19 @@ h1 {
     text-align: center;
 }
 
-.button-container {
+#button-container {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.button-container button {
-    margin-right: 10px;
+#button-container .button-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#button-container button {
+    margin: 0 5px;
     padding: 10px 20px;
     font-size: 14px;
     border-radius: 5px;
@@ -34,16 +40,23 @@ h1 {
     cursor: pointer;
 }
 
-.button-container button:hover {
+#button-container button:hover {
     background-color: #45a049;
 }
 
-.note-list-container {
-    list-style: none;
+h3 {
     padding: 0;
+    text-align: center;
 }
 
-.note-list-container li {
+#note-list-container {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+#note-list-container li {
+    /*display: inline-block;*/
     padding: 10px;
     margin-bottom: 5px;
     background-color: #f9f9f9;
@@ -51,15 +64,15 @@ h1 {
     font-size: 14px;
 }
 
-.note-list-container li:last-child {
+#note-list-container li:last-child {
     margin-bottom: 0;
 }
 
-.note-list-container li span.note {
+#note-list-container li span.note {
     font-weight: bold;
     margin-right: 5px;
 }
 
-.note-list-container li span.probability {
+#note-list-container li span.probability {
     color: #888;
 }
