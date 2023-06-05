@@ -35,7 +35,7 @@ function deleteNoteList() {
 function updateNoteList() {
     let notenListe = JSON.parse(localStorage.getItem("notenListe"));
     let noteListContainer = document.getElementById("note-list-container");
-    noteListContainer.setHTML = "";
+    noteListContainer.innerHTML = "";
 
     if (notenListe) {
         let noteCount = {};
@@ -93,15 +93,12 @@ function createButtonsAndNoteList() {
     resetLastClickButton.addEventListener("click", resetLastClick);
     buttonContainer.appendChild(resetLastClickButton);
 
-
     let deleteButton = document.createElement("button");
     deleteButton.textContent = "Notenliste löschen";
     deleteButton.addEventListener("click", deleteNoteList);
     buttonContainer.appendChild(deleteButton);
 
-    // Anzeigen der Notenliste
     updateNoteList();
 }
 
-// Programm starten
 createButtonsAndNoteList();
